@@ -8,25 +8,27 @@ class FlipFormatter < RSpec::Core::Formatters::DocumentationFormatter
   end
 
   def start(notification)
-    @output << '¯\_(ツ)_/¯ HELLO ' #<< notification.example.description
+
+    @output << "\033[32m#{'¯\_(ツ)_/¯ HELLO '}\033[0m"#[@color_index%2] #<< notification.example.description
     super
   end
   def example_started(notification)
-    @output << ' ┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻  ' #<< notification.example.description
+    @output << ' ┻━┻ ' #<< notification.example.description
     # super
   end
 
   def example_failed(notification)
-    @output << ' NOOOO'
+    @output << 'AAARRGH ヽ(`Д´)ﾉ︵﻿ ┻━┻   '<< notification.example.description
     # @body
+    super
   end
 
-  def example_passed(*)
-  # newline_or_addup
-  output.print " ".freeze, success_color(
-    "\u2714"
-  )
-end
+#   def example_passed(*)
+#   # newline_or_addup
+#   output.print " ".freeze, success_color(
+#     "\u2714"
+#   )
+# end
 
   # def example_failed(failure)
   #   @failed_examples ||= []
