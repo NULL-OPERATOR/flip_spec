@@ -1,2 +1,6 @@
 # rspec_table_flipper
-FLIP- UNFLIP
+PASS - ┬─┬ ノ( ^_^ノ)
+FAIL (╯°□°）╯︵ ┻━┻
+ALL FAILING ┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻
+
+inspired by https://github.com/iridakos/table_flipper
