@@ -1,6 +1,8 @@
 class FlipFormatter < RSpec::Core::Formatters::DocumentationFormatter
-  METHODS = [:start, :example_started, :example_failed, :example_passed]
-  RSpec::Core::Formatters.register self, *METHODS#:start, :example_started, :example_failed
+  COLOURS = { red: 31, green: 32, blue: 34, magenta: 35, cyan: 36, bold: 1 }
+  METHODS = [:start, :example_failed, :example_passed, :dump_summary]
+
+  RSpec::Core::Formatters.register self, *METHODS
 
   def initialize(output)
     @output = output
@@ -8,54 +10,27 @@ class FlipFormatter < RSpec::Core::Formatters::DocumentationFormatter
   end
 
   def start(notification)
-
-    @output << "\033[32m#{'¯\_(ツ)_/¯ HELLO '}\033[0m"#[@color_index%2] #<< notification.example.description
+    @output << colour_text('🍰  F 🍰  L 🍰  I 🍰  P 🍰', 35) #[@color_index%2] #<< notification.example.description
     super
-  end
-  def example_started(notification)
-    @output << ' ┻━┻ ' #<< notification.example.description
-    # super
   end
 
   def example_failed(notification)
-    @output << 'AAARRGH ヽ(`Д´)ﾉ︵﻿ ┻━┻   '<< notification.example.description
-    # @body
-    super
+    @output << colour_text(' (╯°□°)╯ ︵﻿ ┻━━┻  : ' + notification.example.description.upcase + "\n", 31)
   end
 
-#   def example_passed(*)
-#   # newline_or_addup
-#   output.print " ".freeze, success_color(
-#     "\u2714"
-#   )
-# end
+  def example_passed(notification)
+    @output << colour_text('*･ﾟ✧  ┬──┬  ･*ﾟ✧･ : ' + notification.example.description.upcase + "\n", 32)
+  end
 
-  # def example_failed(failure)
-  #   @failed_examples ||= []
-  #   @failed_examples << failure
-  # end
+
+  def colour_text(string, colour)
+    "\033[#{colour}m#{string}\033[0m"
+  end
+
+  def dump_summary(notification)
+    duration = notification.duration
+    summary = "\nFLIPPED OUT IN #{duration} SECONDS\n"
+    output.puts colour_text(summary, 34)
+    output.puts colour_text(notification.fully_formatted, 36)
+  end
 end
-
-
-#   class FlipFormatter < RSpec::Core::Formatters::DocumentationFormatter
-#     RSpec::Core::Formatters.register self, :example_passed, :example_pending, :example_failed
-#   def initialize(output)
-#     super(output)
-#     @test_results = { :failures => [], :successes => [], :skipped => [] }
-#   end
-#
-#   def example_passed(example)
-#     super(example)
-#     @test_results[:successes].push("hello")
-#   end
-#
-#   def example_pending(example)
-#     super(example)
-#     @test_results[:skipped].push("example")
-#   end
-#
-#   def example_failed(example)
-#     super(example)
-#     @test_results[:failures].push(example)
-#   end
-# end
