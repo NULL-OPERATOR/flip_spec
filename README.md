@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/NULL-OPERATOR/flip_spec/badges/gpa.svg)](https://codeclimate.com/github/NULL-OPERATOR/flip_spec) [![Build Status](https://travis-ci.org/NULL-OPERATOR/flip_spec.svg?branch=master)](https://travis-ci.org/NULL-OPERATOR/flip_spec)
+[![Code Climate](https://codeclimate.com/github/NULL-OPERATOR/flip_spec/badges/gpa.svg)](https://codeclimate.com/github/NULL-OPERATOR/flip_spec) [![Build Status](https://travis-ci.org/NULL-OPERATOR/flip_spec.svg?branch=master)](https://travis-ci.org/NULL-OPERATOR/flip_spec) [![Gem Version](https://badge.fury.io/rb/flip_spec.svg)](https://badge.fury.io/rb/flip_spec)
 
 
 
