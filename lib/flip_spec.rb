@@ -1,13 +1,11 @@
-class FlipFormatter #< RSpec::Core::Formatters::DocumentationFormatter
+class FlipFormatter
   COLOURS = { red: 31, green: 32, blue: 34, magenta: 35, cyan: 36, bold: 1 }
   METHODS = [:start, :example_failed, :example_passed]
-  # METHODS = [:start, :example_failed, :example_passed, :dump_summary]
 
   RSpec::Core::Formatters.register self, *METHODS
 
   def initialize(output)
     @output = output
-    # super
   end
 
   def start(notification)
@@ -21,13 +19,6 @@ class FlipFormatter #< RSpec::Core::Formatters::DocumentationFormatter
   def example_passed(notification)
     @output << colour_text('*･ﾟ✧  ┬──┬  ･*ﾟ✧･ : ' + notification.example.description.upcase, 32)
   end
-
-  # def dump_summary(notification)
-  #   duration = notification.duration
-  #   summary = "\nFLIPPED OUT IN #{duration} SECONDS\n"
-  #   output.puts colour_text(summary, 34)
-  #   output.puts colour_text(notification.fully_formatted, 36)
-  # end
 
   private
 

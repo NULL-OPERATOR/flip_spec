@@ -1,5 +1,5 @@
 require "stringio"
-require_relative "../lib/rspec_table_flip"
+require_relative "../lib/flip_spec"
 
 describe FlipFormatter do
 
@@ -41,11 +41,11 @@ describe FlipFormatter do
       end
 
       it "prints a flipped table" do
-        expect(output.read).to include "(╯°□°)╯ ll︵﻿ ┻━━┻  : "
+        expect(output.read).to include "(╯°□°)╯ ︵﻿ ┻━━┻  : "
       end
 
       it "prints in red" do
-        expect(output.read).to include "3l1m"
+        expect(output.read).to include "31m"
       end
     end
 
