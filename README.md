@@ -1,13 +1,7 @@
-# rspec_table_flipper
+# rspec table flipper 🍰
 
-0 PASS 0 FAIL  ¯\_(ツ)_/¯
+because this is all you really need to know
 
-PASS - ┬─┬ ノ( ^_^ノ)
-
-
-FAIL (╯°□°）╯︵ ┻━┻
-
-
-ALL FAILING ┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻
+![Image Alt](public/img/example_tests_1.png)
 
 inspired by https://github.com/iridakos/table_flipper
