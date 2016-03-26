@@ -6,12 +6,12 @@ class FlipFormatter < RSpec::Core::Formatters::DocumentationFormatter
 
   def initialize(output)
     @output = output
-    super
+    # super
   end
 
   def start(notification)
     @output << colour_text('🍰  F 🍰  L 🍰  I 🍰  P 🍰', 35) #[@color_index%2] #<< notification.example.description
-    super
+    # super
   end
 
   def example_failed(notification)
@@ -22,6 +22,7 @@ class FlipFormatter < RSpec::Core::Formatters::DocumentationFormatter
     @output << colour_text('*･ﾟ✧  ┬──┬  ･*ﾟ✧･ : ' + notification.example.description.upcase + "\n", 32)
   end
 
+  private
 
   def colour_text(string, colour)
     "\033[#{colour}m#{string}\033[0m"
