@@ -1,7 +1,4 @@
-language: ruby
-rvm:
-  - 2.2.3
+rvm: 2.2.3
 
-branches:
-  only:
-    - test
+script:
+  - mkdir -p spec && bundle exec rspec spec
