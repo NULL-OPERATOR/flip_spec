@@ -1,7 +1,7 @@
 require "stringio"
 require_relative "../lib/flip_spec"
 
-describe FlipFormatter do
+describe FlipSpec do
 
   let(:output)    { StringIO.new }
   let(:formatter) { described_class.new(output) }
