@@ -48,8 +48,5 @@ describe FlipSpec do
         expect(output.read).to include "31m"
       end
     end
-
-    describe
-
   end
 end

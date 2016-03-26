@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/NULL-OPERATOR/flip_spec/badges/gpa.svg)](https://codeclimate.com/github/NULL-OPERATOR/flip_spec)[![Build Status](https://travis-ci.org/NULL-OPERATOR/flip_spec.svg?branch=master)](https://travis-ci.org/NULL-OPERATOR/flip_spec)
+[![Code Climate](https://codeclimate.com/github/NULL-OPERATOR/flip_spec/badges/gpa.svg)](https://codeclimate.com/github/NULL-OPERATOR/flip_spec) [![Build Status](https://travis-ci.org/NULL-OPERATOR/flip_spec.svg?branch=master)](https://travis-ci.org/NULL-OPERATOR/flip_spec)
 
 
 
@@ -16,7 +16,7 @@ add to your gemfile, then bundle
 ```ruby
 gem 'flip_spec'
 ```
-then add to your .rpsec file
+then add to your .rpsec file (if you dont have one, make it)
 
 ```
 --format FlipSpec
