@@ -13,7 +13,7 @@ describe FlipFormatter do
 
   it "has a welcome message with cake" do
     output.seek(0)
-    expect(output.read).to include "🍰  F 🍰  L 🍰  I 🍰  P 🍰"
+    expect(output.read).to include "🍰  F 🍰  L 🍰  I 🍰  P  -   S 🍰  P 🍰  E 🍰  C 🍰"
   end
 
 
@@ -41,11 +41,11 @@ describe FlipFormatter do
       end
 
       it "prints a flipped table" do
-        expect(output.read).to include "(╯°□°)╯ ︵﻿ ┻━━┻  : "
+        expect(output.read).to include "(╯°□°)╯ ll︵﻿ ┻━━┻  : "
       end
 
       it "prints in red" do
-        expect(output.read).to include "31m"
+        expect(output.read).to include "3l1m"
       end
     end
 
